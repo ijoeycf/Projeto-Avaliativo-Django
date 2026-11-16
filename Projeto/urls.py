@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('agendamentos', agendamentos, name='agendamentos'),
-    path('formulario', cadastraAgendamento, name='formulario'),
+    path('/formulario', cadastraAgendamento, name='formulario'),
     path('agendamentos/<int:id>/editar', editaAgendamento, name='editaAgendamento'),
     path('agendamentos/<int:id>/excluir', excluiAgendamento, name='excluiAgendamento'),
 ]

@@ -1,0 +1,284 @@
+:root {
+    color-scheme: light;
+    --pink: #FCBACB;
+    --pink-dark: #b94f70;
+    --pink-light: #fff0f4;
+    --ink: #342b2e;
+    --muted: #817579;
+    --surface: #ffffff;
+    --background: #fff8fa;
+    --border: #f0e2e6;
+    --shadow: 0 18px 45px rgba(90, 43, 58, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at top left, rgba(252, 186, 203, 0.25), transparent 34rem),
+        var(--background);
+    color: var(--ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--pink-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #923750;
+}
+
+.page-shell {
+    width: min(100% - 2rem, 1040px);
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--pink-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+}
+
+.intro {
+    max-width: 38rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.hero-card,
+.form-card,
+.appointment-card {
+    border: 1px solid rgba(240, 226, 230, 0.9);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    max-height: 370px;
+    border-radius: 18px;
+    object-fit: cover;
+    background: var(--pink-light);
+}
+
+.button,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: var(--pink);
+    color: #422630;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.button:hover,
+button:hover {
+    transform: translateY(-1px);
+    background: #f6a7bb;
+    box-shadow: 0 8px 18px rgba(185, 79, 112, 0.16);
+    color: #422630;
+}
+
+.button-secondary {
+    border-color: var(--border);
+    background: #ffffff;
+}
+
+.button-secondary:hover {
+    background: var(--pink-light);
+}
+
+.button-danger {
+    border-color: #f2d5da;
+    background: #fff5f5;
+    color: #a13e4e;
+}
+
+.button-danger:hover {
+    background: #ffe5e8;
+    color: #8d293a;
+}
+
+.page-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-heading h1 {
+    margin-bottom: 0;
+}
+
+.appointment-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1rem;
+}
+
+.appointment-card {
+    padding: 1.4rem;
+}
+
+.appointment-card h2 {
+    margin-bottom: 0.9rem;
+    font-size: 1.25rem;
+}
+
+.appointment-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+.appointment-detail strong {
+    color: var(--ink);
+    font-weight: 600;
+    text-align: right;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.appointment-actions form {
+    margin: 0;
+}
+
+.appointment-actions .button,
+.appointment-actions button {
+    min-height: 40px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.92rem;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 2.5rem 1.5rem;
+    border: 1px dashed #e8cbd3;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--muted);
+    text-align: center;
+}
+
+.form-page {
+    max-width: 680px;
+}
+
+.form-card {
+    padding: clamp(1.4rem, 5vw, 2.5rem);
+}
+
+.form-card form p {
+    margin-bottom: 1.15rem;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fffdfd;
+    color: var(--ink);
+    font: inherit;
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus {
+    border-color: var(--pink-dark);
+    outline: 3px solid rgba(252, 186, 203, 0.35);
+}
+
+.form-card .helptext,
+.form-card ul {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 680px) {
+    .page-shell {
+        padding: 1.5rem 0;
+    }
+
+    .hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        max-height: 280px;
+    }
+
+    .page-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

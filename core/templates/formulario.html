@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#FCBACB">
+    <title>Agendamento | Rafael</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    
-    <h1>Agendamento</h1>
-
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Salvar</button>
-        </form>
-    </div>
-        <a href="{% url 'agendamentos' %}">
-            Voltar
-        </a>
-
+    <main class="page-shell form-page">
+        <p class="eyebrow">Agenda do Rafael</p>
+        <section class="form-card">
+            <h1>Agendamento</h1>
+            <p class="intro">Preencha os dados do atendimento abaixo.</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-actions">
+                    <button type="submit">Salvar agendamento</button>
+                    <a class="button button-secondary" href="{% url 'agendamentos' %}">
+                        Voltar
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

@@ -4,28 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nail Designer</title>
+    <meta name="theme-color" content="#FCBACB">
+    <title>Nail Designer | Início</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-    {% load static %}
-
-    <h1>Centralize seus atendimentos em um só lugar!</h1>
-
-    <p>
-        Olá Rafael! Esse site foi feito para você organizar
-        seus atendimentos como nail designer.
-    </p>
-
-    <br><br>
-
-    <img src="{% static 'img/rafaelManicure.png' %}"
-     alt="Rafael"
-     width="300">
-
-    <a href="{% url 'agendamentos' %}">
-        Visualizar agendamentos
-    </a>
+    <main class="page-shell">
+        <section class="hero-card">
+            <div>
+                <p class="eyebrow">Agenda do Rafael</p>
+                <h1>Seus atendimentos, organizados em um só lugar.</h1>
+                <p class="intro">
+                    Olá, Rafael! Gerencie seus agendamentos de nail designer
+                    com praticidade e deixe mais tempo para cuidar dos clientes.
+                </p>
+                <a class="button" href="{% url 'agendamentos' %}">
+                    Visualizar agendamentos
+                </a>
+            </div>
+            <img class="hero-image"
+                 src="{% static 'img/rafaelManicure.png' %}"
+                 alt="Rafael, nail designer">
+        </section>
+    </main>
 
 </body>
 </html>
