@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Designer</title>
+</head>
+<body>
+
+    {% load static %}
+
+    <h1>Centralize seus atendimentos em um só lugar!</h1>
+
+    <p>
+        Olá Rafael! Esse site foi feito para você organizar
+        seus atendimentos como nail designer.
+    </p>
+
+    <br><br>
+
+    <img src="{% static 'img/rafaelManicure.png' %}"
+     alt="Rafael"
+     width="300">
+
+    <a href="{% url 'agendamentos' %}">
+        Visualizar agendamentos
+    </a>
+
+</body>
+</html>

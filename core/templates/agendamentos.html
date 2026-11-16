@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Agendamentos do Rafael</h1>
+
+    {% for agendamento in agendamentos %}
+        <div class="agendamento">
+            <h3>{{ agendamento.nomeCliente }}</h3>
+            <p>{{ agendamento.preco }}</p>
+            <p>{{ agendamento.servico }}</p>
+            <p>{{ agendamento.dataAgendada }}</p>
+            <form method="get" action="{% url 'editaAgendamento' agendamento.id %}">
+                <button type="submit">Alterar</button>
+            </form>
+            <form method="post" action="{% url 'excluiAgendamento' agendamento.id %}">
+                {% csrf_token %}
+                <button type="submit">Excluir</button>
+            </form>
+        </div>
+    {% empty %}
+        <p>Nenhum agendamento cadastrado.</p>
+    {% endfor %}
+
+    <a href="{% url 'formulario' %}">
+        Cadastrar agendamento
+    </a>
+
+</body>
+</html>
