@@ -150,6 +150,10 @@ button:hover {
     margin-bottom: 1.5rem;
 }
 
+.page-footer {
+    margin-top: 1.5rem;
+}
+
 .page-heading h1 {
     margin-bottom: 0;
 }
