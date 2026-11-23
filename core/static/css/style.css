@@ -165,17 +165,23 @@ button:hover {
 }
 
 .appointment-card {
+    min-width: 0;
+    max-width: 100%;
     padding: 1.4rem;
 }
 
 .appointment-card h2 {
     margin-bottom: 0.9rem;
     font-size: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .appointment-detail {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    min-width: 0;
     gap: 1rem;
     margin: 0;
     padding: 0.65rem 0;
@@ -184,9 +190,13 @@ button:hover {
 }
 
 .appointment-detail strong {
+    min-width: 0;
     color: var(--ink);
     font-weight: 600;
     text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .appointment-actions {
@@ -286,3 +296,4 @@ button:hover {
         flex-direction: column;
     }
 }
+

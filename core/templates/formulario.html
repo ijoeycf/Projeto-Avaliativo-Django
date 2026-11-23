@@ -26,5 +26,37 @@
             </form>
         </section>
     </main>
+
+    <script>
+    const campoData = document.querySelector('.data-hora');
+
+    campoData.addEventListener('input', function (event) {
+        let valor = event.target.value;
+
+        valor = valor.replace(/\D/g, '');
+
+        valor = valor.substring(0, 12);
+
+        if (valor.length > 8) {
+            valor = valor.replace(
+                /^(\d{2})(\d{2})(\d{4})(\d{2})(\d{0,2})$/,
+                '$1/$2/$3 $4:$5'
+            );
+        } else if (valor.length > 4) {
+            valor = valor.replace(
+                /^(\d{2})(\d{2})(\d{0,4})$/,
+                '$1/$2/$3'
+            );
+        } else if (valor.length > 2) {
+            valor = valor.replace(
+                /^(\d{2})(\d{0,2})$/,
+                '$1/$2'
+            );
+        }
+
+        event.target.value = valor;
+    });
+</script>
+
 </body>
 </html>
